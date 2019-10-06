@@ -15,6 +15,10 @@ public class Event {
         return this.date;
     }
 
+    public void setDate(String newDate) {
+        this.date = newDate;
+    }
+
     /**
      * Creates an event from a JSON string.
      * @param json a JSON string representation of the event

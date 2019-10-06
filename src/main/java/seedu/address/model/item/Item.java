@@ -1,9 +1,11 @@
 package seedu.address.model.item;
 
 import java.util.Optional;
+import java.util.Set;
 import java.util.TreeSet;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import seedu.address.model.tag.Tag;
 
 /**
  * A stub class for the items.
@@ -13,14 +15,14 @@ public class Item {
     private Optional<Task> task;
     private Optional<Event> event;
     private Optional<Reminder> reminder;
-    private TreeSet<String> tags;
+    private Set<Tag> tags;
 
     public Item (String description, Optional<Task> task, Optional<Event> event, Optional<Reminder> reminder) {
         this(description, task, event, reminder, new TreeSet<>());
     }
 
     public Item (String description, Optional<Task> task, Optional<Event> event, Optional<Reminder> reminder,
-                 TreeSet<String> tag) {
+                 Set<Tag> tag) {
         this.description = description;
         this.task = task;
         this.event = event;
@@ -56,8 +58,20 @@ public class Item {
         return reminder.get();
     }
 
-    public TreeSet<String> getTags() {
+    public Set<Tag> getTags() {
         return this.tags;
+    }
+
+    public void setTask(Task task) {
+        this.task = Optional.of(task);
+    }
+
+    public void setEvent(Event event) {
+        this.event = Optional.of(event);
+    }
+
+    public void setReminder(Reminder reminder) {
+        this.reminder = Optional.of(reminder);
     }
 
     /**

@@ -36,4 +36,8 @@ public class Reminder {
     public String getDate() {
         return this.date;
     }
+
+    public void setDate(String newDate) {
+        this.date = newDate;
+    }
 }
